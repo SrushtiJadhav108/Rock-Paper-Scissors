@@ -1,24 +1,48 @@
 let options=['rock','paper','scissor']
+ let uwin=0
+ let  ulost=0
+ let both=0
+
 function playGame(userChoice)
 {
     console.log(userChoice)
     let randomIndex=Math.floor(Math.random()*3)
-    const computerCoice=options[randomIndex]
+    let computerChoice=options[randomIndex]
+    //soin it to te console
     console.log("User choice: ",userChoice)
-    console.log("User choice: ",computerCoice)
+    console.log("Computer choice: ",computerChoice)
+
+    //gettin g values bye id 
+    const userChoieText=document.getElementById("user-choice")
+    const computerChoiceText=document.getElementById("computer-choice")
+    const resultText=document.getElementById("result")
+    //wins
+    const yourWinText=document.getElementById("your-wins")
+    const computerWinText=document.getElementById("computer-wins")
+    const drawText=document.getElementById("draws")
+   
+    
 
     //wo is winning
-    if(userChoice=="rock"&&computerCoice=="scissor"||userChoice=="paper"&&computerCoice=="rock"||userChoice=="scissor"&&computerCoice=="paper")
+    if(userChoice=="rock"&&computerChoice=="scissor"||userChoice=="paper"&&computerChoice=="rock"||userChoice=="scissor"&&computerChoice=="paper")
     {
-        alert("You Won")
+        resultText.textContent="You Won 😊"
+         uwin++
+          yourWinText.textContent="Your Win :"+uwin
     }
-    else if(userChoice=="scissor"&&computerCoice=="rock"||userChoice=="rock"&&computerCoice=="paper"||userChoice=="paper"&&computerCoice=="scissor")
+    else if(userChoice=="scissor"&&computerChoice=="rock"||userChoice=="rock"&&computerChoice=="paper"||userChoice=="paper"&&computerChoice=="scissor")
     {
-        alert("You lost")
+        resultText.textContent="You Lost 😔"
+        ulost++
+        computerWinText.textContent="Computer Wins : "+ulost
     }
     else
     {
-        alert("Draw")
+        resultText.textContent="Draw ✌️"
+        both++
+        drawText.textContent="Draw's : "+both
     }
-
+    //update html
+    userChoieText.textContent="User Choice :"+userChoice
+    computerChoiceText.textContent="Computer choice: "+computerChoice
 }

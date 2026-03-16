@@ -10,20 +10,21 @@
 <body>
      <h1>Rock Paper Scissors</h1>
      <div class="result">
-        <p>Your choice:Rock</p>
-        <p>Computer Choice:Rock</p>
-        <p>You won:😊</p>
+        <p id="user-choice">User Choice: </p>
+         <p id="computer-choice">Computer Choice: </p>
+         <p id="result"></p>
      </div>
      <div class="game">
         <button id="rock" onclick="playGame('rock')">🪨</button>
         <button id="paper" onclick="playGame('paper')">📄</button>
         <button id="scissor" onclick="playGame('scissor')">✂️</button>
      </div>
-    <main>
-        
-    </main>
- 
-
+     <div class="counts">
+         <p id="your-wins">Your Wins: </p>
+         <p id="computer-wins">Computer Wins: </p>
+         <p id="draws">Draw: </p>
+      </div>
+     
     <script src="script.js"></script>
 </body>
 
